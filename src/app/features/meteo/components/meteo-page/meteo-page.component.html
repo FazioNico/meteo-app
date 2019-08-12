@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-grid text-center *ngIf="meteoData$|async as meteoData">
+    <ion-row>
+      <ion-col text-center>
+        <img [src]="'http://openweathermap.org/img/wn/' + meteoData?.weather[0]?.icon + '@2x.png'" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>
+            {{ meteoData?.name }}
+        </p>
+        <p>
+          temp: {{ meteoData?.main?.temp }}° <br>
+          temp max: {{ meteoData?.main?.temp_max }}° <br>
+          temp min: {{ meteoData?.main?.temp_min }}° <br>
+          pressure: {{ meteoData?.main?.pressure }} <br>
+          humidity: {{ meteoData?.main?.humidity }} <br>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
