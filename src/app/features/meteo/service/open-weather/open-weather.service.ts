@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OpenWeatherService {
 
-  private _appId = 'e69064d639a2a2cd2f257cb59c476c6c';
+  private _appId = environment.api.openweather;
 
   constructor(
     private _http: HttpClient
